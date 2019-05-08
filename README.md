@@ -2,7 +2,7 @@
 A repository for DevOps assignments and projects
 
 ## Auto deployment for Yummy Recipes REST API
-The script in this project is for automated deployment of the [yummy-rest](https://github.com/indungu/yummy-rest.git) project on an Ubuntu Server 16.04 instance on AWS EC2.
+The script in this project is for automated deployment of the [yummy-rest](https://github.com/indungu/yummy-rest.git) project on an Centos 7 instance on AWS EC2.
 
 ### Pre-requisites
 Create an AWS EC2 instance of the Ubuntu Server 16.04 and ensure the following inbound rules are set as shown.
