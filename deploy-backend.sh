@@ -20,7 +20,7 @@ function setup_python_venv() {
     printf "***************************************************\n\t\tSetting up Venv \n***************************************************\n"
     # Install virtualenv
     echo ======= Installing virtualenv =======
-    pip3 install virtualenv
+    pip3 install --user virtualenv
 
     # Create virtual environment and activate it
     echo ======== Creating and activating virtual env =======
