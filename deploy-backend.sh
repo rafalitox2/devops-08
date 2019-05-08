@@ -112,9 +112,9 @@ function create_launch_script () {
 
     sudo cat > /home/centos/launch.sh <<EOF
     #!/bin/bash
-    cd ~/yummy-rest
-    source ~/.env
-    source ~/venv/bin/activate
+    cd /home/centos/yummy-rest
+    source /home/centos/.env
+    source /home/centos/venv/bin/activate
     gunicorn app:APP -D
 EOF
     sudo chmod 744 /home/centos/launch.sh
