@@ -13,8 +13,8 @@ function initialize_worker() {
 
     # Export language locale settings
     echo ======= Exporting language locale settings =======
-    export LC_ALL=C.UTF-8
-    export LANG=C.UTF-8
+    export LC_ALL=en_US.UTF-8
+    export LANG=en_US.UTF-8
 
     # Install NodeJS and NPM
     echo ======= Installing NodeJS =======
