@@ -2,7 +2,9 @@
 A repository for DevOps assignments and projects
 
 ## Auto deployment for Yummy Recipes REST API
-The script in this project is for automated deployment of the [yummy-rest](https://github.com/indungu/yummy-rest.git) project on an centos Server 16.04 instance on AWS EC2.
+
+The script in this project is for automated deployment of the [yummy-rest](https://github.com/indungu/yummy-rest.git) project on an Centos 7 instance on AWS EC2.
+
 
 ### Pre-requisites
 Create an AWS EC2 instance of the centos Server 16.04 and ensure the following inbound rules are set as shown.
@@ -14,11 +16,10 @@ Create an AWS EC2 instance of the centos Server 16.04 and ensure the following i
 1. Connect to the instance through the ssh.
 2. clone this repository
     ```bash
-    git clone -b deploy-automation https://github.com/indungu/devops-08.git setup
+    git clone -b deploy-automation https://github.com/rafalitox2/devops-08.git setup
     ```
-3. Run the script 
+3. Run the script
     ```bash
     source setup/deploy-backend.sh
     ```
 4. Close the `gunicorn` and exit the shell connection
-
