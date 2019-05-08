@@ -1,26 +1,23 @@
 #! /bin/bash
 
 # This is a simple script that uses Certbot to install
-# SSL certificates when serving web applications using 
+# SSL certificates when serving web applications using
 # nginx
 
 # Setup host
 
 function setup_host() {
     printf "***************************************************\n\t\t Setting up host \n***************************************************\n"
-    echo ======= Updating packages ========
-    sudo apt-get update
-    echo ======= Installing software properties common ========
-    sudo apt-get install software-properties-common
-    echo ======= Adding certbot Personal Package Archives ========
-    sudo add-apt-repository ppa:certbot/certbot
-    echo ======= Updating packages =======
-    sudo apt-get update
+    echo ================ installing yum-utils ================
+    yum -y install yum-utils
+    echo ================ installing yum-utils ================
+    yum-config-manager --enable rhui-eu-west-1a-rhel-server-extras rhui-eu-west-1a-rhel-server-optional
+
 }
 
 function install_certbot() {
     printf "***************************************************\n\t\t Installing Certbot \n***************************************************\n"
-    sudo apt-get install -y python-certbot-nginx 
+    sudo yum install certbot python3-certbot-nginx
 }
 
 function install_certificate() {

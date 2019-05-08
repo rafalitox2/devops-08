@@ -4,7 +4,7 @@ function initialize_worker() {
     printf "***************************************************\n\t\tSetting up host \n***************************************************\n"
     # Update packages
     echo ======= Updating packages ========
-    sudo apt-get update
+    sudo yum update
 
     # Export language locale settings
     echo ======= Exporting language locale settings =======
@@ -13,7 +13,7 @@ function initialize_worker() {
 
     # Install pip3
     echo ======= Installing pip3 =======
-    sudo apt-get install -y python3-pip
+    sudo yum install -y python3-pip
 }
 
 function setup_python_venv() {
@@ -68,7 +68,7 @@ EOF
 function setup_nginx() {
     printf "***************************************************\n\t\tSetting up nginx \n***************************************************\n"
     echo ======= Installing nginx =======
-    sudo apt-get install -y nginx
+    sudo yum install -y nginx
 
     # Configure nginx routing
     echo ======= Configuring nginx =======
@@ -108,14 +108,14 @@ EOF'
 function create_launch_script () {
     printf "***************************************************\n\t\tCreating a Launch script \n***************************************************\n"
 
-    sudo cat > /home/ubuntu/launch.sh <<EOF
+    sudo cat > /home/centos/launch.sh <<EOF
     #!/bin/bash
     cd ~/yummy-rest
     source ~/.env
     source ~/venv/bin/activate
     gunicorn app:APP -D
 EOF
-    sudo chmod 744 /home/ubuntu/launch.sh
+    sudo chmod 744 /home/centos/launch.sh
     echo ====== Ensuring script is executable =======
     ls -la ~/launch.sh
 }
@@ -129,8 +129,8 @@ function configure_startup_service () {
     After=network.target
 
     [Service]
-    User=ubuntu
-    ExecStart=/bin/bash /home/ubuntu/launch.sh
+    User=centos
+    ExecStart=/bin/bash /home/centos/launch.sh
 
     [Install]
     WantedBy=multi-user.target
@@ -146,7 +146,7 @@ EOF'
 Serve the web app through gunicorn
 function launch_app() {
     printf "***************************************************\n\t\tServing the App \n***************************************************\n"
-    sudo bash /home/ubuntu/launch.sh
+    sudo bash /home/centos/launch.sh
 }
 
 ######################################################################
