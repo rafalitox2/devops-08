@@ -14,7 +14,7 @@ Create an AWS EC2 instance of the Ubuntu Server 16.04 and ensure the following i
 1. Connect to the instance through the ssh.
 2. clone this repository
     ```bash
-    git clone -b deploy-automation https://github.com/indungu/devops-08.git setup
+    git clone -b deploy-automation https://github.com/rafalitox2/devops-08.git setup
     ```
 3. Run the script 
     ```bash
