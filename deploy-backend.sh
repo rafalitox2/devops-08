@@ -76,6 +76,8 @@ function setup_nginx() {
     sudo rm -rf /etc/nginx/sites-available/default
     sudo rm -rf /etc/nginx/sites-enabled/default
     echo ======= Replace config file =======
+    sudo mkdir /etc/nginx/sites-available
+    sudo mkdir /etc/nginx/sites-enabled
     sudo bash -c 'cat <<EOF > /etc/nginx/sites-available/default
     server {
             listen 80 default_server;
